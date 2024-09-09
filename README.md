@@ -1,51 +1,50 @@
-# Heart-disease_Project2
-              Utforskning av Hjärtdata och Identifiering av Riskfaktorer
-1. Introduktion
-Presentation av Datasetet:
-Vi har analyserat ett dataset som innehåller information om hjärtsjukdomar. Datasetet innehåller 14 variabler inklusive ålder, kön, kolesterolnivåer, blodtryck och målvariabeln target, som indikerar närvaron av hjärtsjukdom (1) eller frånvaro (0).
-Syftet med denna analys är att identifiera nyckelvariabler som påverkar risken för hjärtsjukdomar och förstå hur dessa variabler samverkar.
-2. Datautforskning
-Statistik över Nyckelvariabler:
+# Project Type: Exploratory Data Analysis and Machine Learning for Health Risk Identification
 
-Ålder: Medelåldern i datasetet är cirka 54 år. Detta antyder att populationen är huvudsakligen medelålders, vilket är en kritisk ålder för hjärtsjukdomar.
-Blodtryck: Medelvärdet för vilande blodtryck (trestbps) är cirka 131 mm Hg, vilket är något över normalvärdet, vilket kan indikera hypertoni bland många individer.
-Korrelationsmatris: Vi undersökte korrelationerna mellan olika variabler och fann att vissa variabler som maximal hjärtfrekvens (thalach) och ST-depression (oldpeak) har starka korrelationer med målvariabeln.
+Business Strategy and Analysis
 
-Observationer:
+Business Strategy: By understanding key factors affecting heart disease risk, healthcare professionals can better identify high-risk individuals and apply preventive measures earlier. This insight can improve patient outcomes and optimize resource allocation in healthcare.
 
-Positiv korrelation mellan kolesterol och ålder, vilket inte är överraskande då kolesterolnivåer tenderar att öka med åldern.
-Negativ korrelation mellan maximal hjärtfrekvens och ålder, vilket visar att äldre personer tenderar att ha lägre maximal hjärtfrekvens.
-3. Visualisering
-Åldersfördelning:
+Variables:
 
-Histogrammet visar att de flesta patienter är mellan 40 och 65 år gamla, vilket är den åldersgrupp där risken för hjärtsjukdomar är högre.
+Age: The age of patients, which provides insight into the age distribution of the population studied.
+Gender: The gender of patients, which may reveal any gender-based risk differences.
+Cholesterol Levels: Levels of cholesterol, which is a key indicator of heart disease risk.
+Blood Pressure: Resting blood pressure levels, which help assess cardiovascular health.
+Target: Binary variable indicating the presence (1) or absence (0) of heart disease.
+Exploratory Data Analysis (EDA):
 
-Blodtryck (trestbps) - Boxplot:
+Statistics of Key Variables:
 
-Boxplot visar att det finns flera outliers i blodtrycksdata, vilket kan tyda på patienter med allvarliga blodtrycksproblem.
+Age: The average age is around 54 years, indicating a predominantly middle-aged population, a critical age for heart disease.
+Blood Pressure: The mean resting blood pressure is approximately 131 mm Hg, slightly above normal, suggesting potential hypertension in many individuals.
+Correlation Matrix: Strong correlations were found between maximum heart rate (thalach) and ST depression (oldpeak) with the target variable.
+Observations:
 
-Scatterplot: Ålder vs. Maximal Hjärtfrekvens:
+Positive Correlation: Cholesterol levels and age are positively correlated, as cholesterol tends to increase with age.
+Negative Correlation: Maximum heart rate and age are negatively correlated, indicating that older individuals generally have lower maximum heart rates.
+Visualization:
 
-Detta scatterplot illustrerar en tydlig trend där äldre personer tenderar att ha lägre maximal hjärtfrekvens. De blåa punkterna representerar individer utan hjärtsjukdom, och de röda representerar de med hjärtsjukdom.
+Age Distribution:
+Histogram: Most patients are between 40 and 65 years old, a higher-risk age group for heart disease.
+Blood Pressure (trestbps) - Boxplot:
+Boxplot: Reveals several outliers in blood pressure data, indicating patients with severe blood pressure issues.
+Scatterplot: Age vs. Maximum Heart Rate:
+Scatterplot: Shows a clear trend where older individuals tend to have lower maximum heart rates. Blue points represent individuals without heart disease, while red points indicate those with heart disease.
+Data Reduction: Singular Value Decomposition (SVD):
 
-4. Datareduktion: Singular Value Decomposition (SVD)
 Singular Value Decomposition (SVD):
+Purpose: Used to identify underlying patterns in the data.
+Components: The first component explains approximately 28% of the variation, and the second component explains about 22%.
+SVD Visualization:
+SVD Plot: Shows clear clusters based on the presence of heart disease, indicating that selected variables effectively distinguish between individuals with and without heart disease.
+Summary and Conclusions:
 
-För att bättre förstå de underliggande mönstren i data använde vi Singular Value Decomposition (SVD). 
-Dessa två komponenter förklarar en betydande del av variationen i data, där den första komponenten förklarar cirka 28% av variationen och den andra komponenten förklarar cirka 22%.
+Key Insights:
 
-Visualisering av SVD-resultat:
+Age and Maximum Heart Rate: Strongly associated with heart disease. Older individuals with lower maximum heart rates are more likely to have heart disease.
+Blood Pressure and Cholesterol: High levels of these variables are associated with increased risk.
+PCA Effectiveness: Principal Component Analysis (PCA) effectively reduces data complexity while preserving significant underlying information, useful for classification and diagnosis.
+Implications:
 
-SVD-plotten visar tydliga kluster baserat på närvaro av hjärtsjukdom, vilket indikerar att de utvalda variablerna effektivt kan skilja mellan personer med och utan hjärtsjukdom. Denna visualisering stödjer hypotesen att vissa kombinationer av variabler i datasetet är starka indikatorer för hjärtsjukdomar.
-
-
-5. Sammanfattning och Slutsatser
-Viktigaste Insikter:
-
-Ålder och Maximal Hjärtfrekvens är starkt kopplade till hjärtsjukdom. Äldre individer med lägre maximal hjärtfrekvens har en högre sannolikhet att ha hjärtsjukdom.
-Blodtryck och Kolesterol är också viktiga variabler att överväga, då höga nivåer av dessa är förknippade med en ökad risk.
-PCA har visat att vi kan effektivt reducera komplexiteten i data och ändå bevara en stor del av den underliggande informationen, vilket är användbart för klassificering och diagnos.
-Implikationer:
-
-Dessa insikter kan hjälpa läkare att bättre identifiera riskpatienter och tillämpa förebyggande åtgärder tidigare.
-Vidare forskning kan inkludera djupare analys av andra variabler, samt att använda dessa insikter i maskininlärningsmodeller för att prediktera hjärtsjukdom.
+Healthcare Improvement: Insights can aid in early identification of high-risk patients and application of preventive measures.
+Future Research: Further analysis of additional variables and application of these insights in machine learning models for heart disease prediction.
